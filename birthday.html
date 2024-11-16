@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Card</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #fef3c7, #f6d6ad);
+    }
+
+    .card {
+      width: 400px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .card-header {
+      background: linear-gradient(135deg, #ff8c8c, #ff3d3d);
+      color: #fff;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-body h1 {
+      font-size: 36px;
+      color: #34495e;
+      margin: 0;
+    }
+
+    .card-body p {
+      font-size: 18px;
+      color: #555;
+      margin: 15px 0;
+    }
+
+    .card-body .emoji {
+      font-size: 48px;
+      margin: 20px 0;
+    }
+
+    .card-footer {
+      background: #ff8c8c;
+      color: #fff;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      🎉 Happy Birthday🎉 
+    </div>
+    <div class="card-body">
+      <div class="emoji">🎂🥳🎁</div>
+      <h1>Happy Birthday "Person Name"</h1>
+      <p>Enjoy your special day to the fullest!</p>
+    </div>
+    <div class="card-footer" id="footer">
+      <!-- The footer text will be dynamically updated -->
+    </div>
+  </div>
+
+  <script>
+    // Get the footer element
+    const footer = document.getElementById('footer');
+
+    // Get the current date and time
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    const currentDateTime = now.toLocaleString('en-US', options);
+
+    // Update the footer text with the current date and time
+    footer.textContent = `${currentDateTime}`;
+  </script>
+</body>
+</html>
